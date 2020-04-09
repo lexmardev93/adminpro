@@ -13,6 +13,11 @@ import { AppRoutingModule } from './app-routing.module';
 // Modulos personalizados
 import { PagesModule } from './pages/pages.module';
 
+// Servicios
+import { ServiceModule } from './services/service.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +28,8 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
