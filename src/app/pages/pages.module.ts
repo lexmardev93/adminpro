@@ -12,6 +12,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 import { ChartsModule } from 'ng2-charts';
 import { GraficodonaComponent } from '../components/graficodona/graficodona.component';
 import { AccountsettingsComponent } from './accountsettings/accountsettings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AccountsettingsComponent } from './accountsettings/accountsettings.comp
     Graficas1Component,
     IncrementadorComponent,
     GraficodonaComponent,
-    AccountsettingsComponent
+    AccountsettingsComponent,
+    PromesasComponent,
+    RxjsComponent
   ],
   exports: [
     PagesComponent,
