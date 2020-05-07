@@ -14,6 +14,9 @@ import { GraficodonaComponent } from '../components/graficodona/graficodona.comp
 import { AccountsettingsComponent } from './accountsettings/accountsettings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,20 +28,22 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficodonaComponent,
     AccountsettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent,
   ],
   exports: [
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    Graficas1Component
+    Graficas1Component,
   ], // Debemos exportar los componentes que utilizaremos en otros lugares
   imports: [
+    CommonModule,
     SharedModule,
     AppRoutingModule,
     FormsModule,
-    ChartsModule
-  ]
+    ChartsModule,
+    PipesModule,
+  ],
 })
-
-export class PagesModule { }
+export class PagesModule {}

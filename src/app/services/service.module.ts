@@ -4,18 +4,23 @@ import { CommonModule } from '@angular/common';
 import {
   SidebarService,
   SharedService,
-  SettingsService
+  SettingsService,
+  UsuarioService,
+  LoginGuard,
+  SubirarchivoService,
 } from './service.index';
+import { HttpClientModule } from '@angular/common/http'; // Este es necesario para que los servicios puedan hacer peticiones http
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule, HttpClientModule],
   providers: [
     SidebarService,
     SharedService,
-    SettingsService
-  ]
+    SettingsService,
+    UsuarioService,
+    LoginGuard,
+    SubirarchivoService,
+  ],
 })
-export class ServiceModule { }
+export class ServiceModule {}

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Perfil del usuario</h4>
+        <h6 class="card-subtitle">Nombre usuario</h6>
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" class="form p-t-20">
+          <div class="form-group">
+            <label for="exampleInputuname">Nombre de usuario</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-user"></i></div>
+              <!-- Este tipo de [ngModel] solo obtiene el valor mas no hace el set -->
+              <input [ngModel]="usuario.nombre" name="nombre" class="form-control" type="text"
+                placeholder="Nombre de usuario" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo de usuario</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-email"></i></div>
+              <input [ngModel]="usuario.email" [disabled]="usuario.google" name="email" class="form-control"
+                type="email" placeholder="Correo de usuario" required />
+            </div>
+          </div>
+          <button class="btn btn-success waves-effect waves-light m-r-10" type="submit">
+            <i class="fa fa-save"></i>
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 text-center">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Fotografia del usuario</h4>
+        <h6 class="card-subtitle">{{ usuario.nombre }}</h6>
+        <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" alt="Profile image" class="img-fluid" width="150px;" />
+        <img *ngIf="imagenTemp" [src]="imagenTemp" alt="Profile image" class="img-fluid" width="150px;" />
+        <br>
+        <input type="file" name="file" id="file" (change)="seleccionarImagen($event.target.files[0])" />
+        <br />
+        <br />
+        <button (click)="subirImagen()" [disabled]="!imagenSubir"
+          class="btn btn-block btn-success waves-effect waves-light m-r-10" type="button">
+          <i class="fa fa-save"></i>
+          Actualizar foto
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
